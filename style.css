@@ -1,12 +1,42 @@
 body {
     overflow: hidden;
     margin: 0px;
+    font-family: Arial, sans-serif;
+}
+
+#overlay-layout {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+}
+
+#overlay-layout > * {
+    pointer-events: all;
+}
+
+#sidebar-backButton {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    cursor: grab;
 }
 
 .btn-overlay {
     z-index: 10;
     position: absolute;
     color: red;
+}
+
+#tree-container {
+    background-color:white;
+}
+
+#input-currentpos {
+    width: 3em;
+    border: none;
+    font-size: 1em;
+
 }
 
 #btn-lattice {
@@ -17,4 +47,197 @@ body {
 #btn-2d {
     top: 20;
     right: 20;
+}
+
+.checkbox-overlay {
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: aqua;
+}
+
+#btn-ghostgroup {
+    top: 0;
+    right: 0;
+}
+
+#side-bar {
+    position: absolute;
+    background-color: white;
+    border: 3px solid grey;
+    border-radius: 5px 5px;
+    max-height: 65vh;
+    min-height: 25vh;
+    max-width: 20vw;
+    padding: 3px;
+    top: 20.5wh;
+}
+
+#toggle-side-bar {
+    display: table-cell;
+    position: absolute;
+    top: 0%;
+    right: 0;
+    height: 100%;
+    line-height: 100%;
+    vertical-align: middle;
+    border-radius: 0 0.5em 0.5em 0;
+    background-color: white;
+}
+
+#bitmap-container {
+    width: 100vw;
+    position: absolute;
+    bottom: 0%;
+}
+
+#bitmap-canvas-container {
+    position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+#toggle-bitmap {
+    position: absolute;
+    right: 20px;
+}
+
+#bitmap-viewbox-container {
+    pointer-events: none;
+}
+
+#bitMap-viewBox{
+    position: absolute;
+    margin-top: 20px;
+    border: 1px solid grey;
+    background-color: #0000001c;
+}
+
+#bitMap-viewBox-locked{
+    position: absolute;
+    margin-top: 20px;
+    border: 1px solid black;
+    background-color: #0000001c;
+}
+
+.hideBitMap{
+    animation-duration: 1s;
+    animation-name: hideBitMap;
+    max-height: 0;
+}
+
+.showBitMap {
+    animation-duration: 1s;
+    animation-name: showBitMap;
+    max-height: 200px;
+}
+
+.bitMapCanvas {
+    margin-bottom: -3px;
+}
+
+@keyframes hideBitMap {
+    from { max-height: 200px; display: unset; }
+    99%  { display: unset;}
+    to   { max-height: 0; display: none;  }
+}
+
+@keyframes showBitMap {
+    from { max-height: 0;  }
+    to   { max-height: 200px;}
+}
+
+.log-table {
+    width: 100%;
+    border: 1px solid grey;
+}
+
+.log-table td, th {
+  border: 1px solid #999;
+  border-collapse: collapse;
+  padding: 1.5px;
+  width: min-content;
+}
+
+.stats-table {
+    width: 100%;
+}
+
+#popup-bg {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.247);
+    backdrop-filter: 5px;
+}
+
+.popup-container {
+    position: absolute;
+    height: 50vh;
+    width: 30vw;
+    top: 25vh;
+    left: 35vw;
+    background-color: white;
+    border: 5px solid #ccc;
+    border-radius: 5px;
+}
+
+.popup-container div{
+    width: 100%;
+}
+
+.popup-container h1 {
+    text-align: center;
+}
+
+.popup-container label {
+    display:  inline-block;
+    width: 8em;
+    display: inline-block;
+    padding-left: 1em;
+}
+
+.popup-container fieldset {
+    display: grid;
+}
+
+.popup-container button {
+    position: absolute;
+    bottom: 1em;
+    right: 25%;
+}
+
+#config-params input{
+    width: 1em;
+}
+
+#popup-rules {
+    display: none;
+    max-height: 40vh;
+    overflow-y: auto;
+}
+
+.align-Right {
+    text-align: right;
+}
+
+.small-Cell{
+    width: 10%;
+}
+
+.medium-Cell{
+    width: 40%;
+}
+
+.large-Cell{
+    width: 50%;
+}
+
+.error-span {
+    font-style: italic;
+    color: grey;
+    margin-left: 20%;
 }
